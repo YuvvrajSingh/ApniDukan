@@ -1,68 +1,21 @@
 "use client"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import React from "react"
 
-const products = [
-  {
-    id: 1,
-    name: "Cashmere Blend Coat",
-    price: "₹12,999",
-    image: "/placeholder.svg?height=400&width=300",
-    category: "Outerwear",
-  },
-  {
-    id: 2,
-    name: "Silk Midi Dress",
-    price: "₹8,499",
-    image: "/placeholder.svg?height=400&width=300",
-    category: "Dresses",
-  },
-  {
-    id: 3,
-    name: "Tailored Blazer",
-    price: "₹9,999",
-    image: "/placeholder.svg?height=400&width=300",
-    category: "Blazers",
-  },
-  {
-    id: 4,
-    name: "Merino Wool Sweater",
-    price: "₹6,999",
-    image: "/placeholder.svg?height=400&width=300",
-    category: "Knitwear",
-  },
-{
-  id: 5,
-  name: "Wide Leg Trousers",
-  price: "₹7,499",
-  image: "/wide leg trouser.avif?height=400&width=300",
-  category: "Bottoms",
-  link: "https://https://www2.hm.com/en_in/productpage.1199249033.html?utm_term=&gad_campaignid=21521015418.com/wide-leg-trousers"
-},
-  {
-    id: 6,
-    name: "Leather Handbag",
-    price: "₹15,999",
-    image: "/bag.jpg?height=400&width=300",
-    category: "Accessories",
-  },
-  {
-    id: 7,
-    name: "Cotton cheques Shirt",
-    price: "₹999",
-    image: "/pink shirt.png?height=400&width=300 ",
-    category: "Shirts",
-  },
-  {
-    id: 8,
-    name: "Ankle Boots",
-    price: "₹11,999",
-    image: "/winter-boots.jpg?height=400&width=300",
-    category: "Footwear",
-  },
-]
+interface Product {
+  _id?: string;
+  id?: string | number;
+  name: string;
+  price: number | string;
+  category: string;
+  imageUrl?: string;
+  image?: string;
+  description?: string;
+  inStock?: boolean;
+}
 
-export function ProductGrid() {
+export function ProductGrid({ products }: { products: Product[] }) {
   return (
     <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -77,11 +30,11 @@ export function ProductGrid() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-12">
           {products.map((product) => (
-            <div key={product.id} className="group cursor-pointer transition-all duration-300 hover:scale-105">
+            <div key={product._id || product.id} className="group cursor-pointer transition-all duration-300 hover:scale-105">
               {/* Product Image */}
               <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-xl bg-[#F6F1EB]">
                 <Image
-                  src={product.image || "/placeholder.svg"}
+                  src={product.imageUrl || product.image || "/placeholder.svg"}
                   alt={product.name}
                   fill
                   className="object-cover transition-all duration-300 group-hover:brightness-110"
@@ -93,7 +46,7 @@ export function ProductGrid() {
               <div className="space-y-2">
                 <p className="text-sm text-[#444444] tracking-wider uppercase">{product.category}</p>
                 <h3 className="text-lg font-medium text-[#111111] tracking-wide">{product.name}</h3>
-                <p className="text-lg font-semibold text-[#111111] tracking-wide">{product.price}</p>
+                <p className="text-lg font-semibold text-[#111111] tracking-wide">₹{product.price}</p>
                 <Button
                   variant="outline"
                   className="w-full mt-3 border-[#D4BFAA] text-[#111111] hover:bg-[#D4BFAA] hover:text-white transition-all duration-300 tracking-wider bg-transparent"
