@@ -64,6 +64,12 @@ export function Navbar() {
             >
               About
             </Link>
+            <Link
+              href="/admin"
+              className="hidden md:block px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
+            >
+              Admin
+            </Link>
           </div>
 
           {/* Desktop Icons */}
@@ -133,6 +139,12 @@ export function Navbar() {
                 className="block px-3 py-2 text-[#444444] hover:text-[#111111] tracking-wide"
               >
                 About
+              </Link>
+              <Link
+                href="/admin"
+                className="block px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium mx-3"
+              >
+                Admin Panel
               </Link>
             </div>
             <div className="border-t px-4 py-3 flex space-x-4">
