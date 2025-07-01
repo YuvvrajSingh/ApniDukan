@@ -18,7 +18,7 @@ export function Hero() {
       {/* Hero Image */}
       <div className="absolute inset-0">
         <Image
-          src="/herophoto.jpg?height=1080&width=1920"
+          src="/photo 2.jpg?height=1080&width=1920"
           alt="Fashion Hero"
           fill
           className="object-cover"

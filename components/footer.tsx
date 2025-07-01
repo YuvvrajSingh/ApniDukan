@@ -14,7 +14,7 @@ export function Footer() {
               contemporary wardrobe.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
+              <Link href="https://www.instagram.com/dave_prateek/" className="text-[#444444] hover:text-[#111111] transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
@@ -23,7 +23,7 @@ export function Footer() {
               <Link href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-[#444444] hover:text-[#111111] transition-colors">
+              <Link href="pdave7758@gmail.com" className="text-[#444444] hover:text-[#111111] transition-colors">
                 <Mail className="h-5 w-5" />
               </Link>
             </div>
